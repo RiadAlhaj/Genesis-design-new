@@ -1,63 +1,638 @@
-body{
+body {
   max-width: 1360px;
   width: 100%;
   min-height: 3840px;
   height: 100vh;
   margin: auto;
 }
-p{
+
+p {
   margin: 0px;
 }
-hr{
+
+hr {
   margin: 0px;
   color: #979797;
 }
+
+$home-text-color: #111111;
+$home-font-family: "Mulish", sans-serif;
+
+@mixin li_decration {
+  :hover {
+    opacity: 0.35;
+  }
+
+  :active {
+    opacity: 0.15;
+  }
+}
+
+@mixin shadow_transition {
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.20);
+  transition: opacity 0.20s;
+}
+
+%svg {
+  width: 91px;
+  height: 23px;
+}
+
 /* the start of the header grid container which contains all the content in the header section.*/
-.grid_container_header{
+.grid_container_header {
   display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows:repeat(8,1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   max-width: 1109px;
-  width:100%;
+  width: 100%;
   min-height: 431px;
   height: 100vh;
   margin: auto;
-  &_chiled_1{
+
+  .chiled_1 {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column: 1/-1;
     grid-row: 1/3;
   }
-  &_navbar{
+
+  .nav {
     grid-column: 1/-1;
-      grid-row: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr;
+
+    &_logo {
+      margin: 0px;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      @extend%svg;
+    }
+
+    &_ul_home {
+      grid-column: 3/4;
+      grid-row: 1/2;
       display: grid;
-      grid-template-columns: 1fr 8fr 1fr;
+      grid-template-columns: 3fr 1fr 3fr;
+      gap: 10px;
       grid-template-rows: 1fr;
-      &_top_logo{
-        margin: 0px;
-        grid-column:1/2;
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+
+      .li_top1 {
+        grid-column: 1/2;
+        grid-row: 1/2
+      }
+
+      .li_top2 {
+        grid-column: 3/4;
         grid-row: 1/2;
       }
-      &_top_ul_home{
-        grid-column:3/4;
-        grid-row: 1/2;
-        display: grid;
-        grid-template-columns: 3fr 1fr 3fr;
-        gap: 10px;
-        grid-template-rows: 1fr;
-        list-style: none;
-        padding: 0px;
-        margin: 0px;
-        &_li_top1{
-          grid-column: 1/2;
-          grid-row: 1/2
-        }
-        &_li_top2{
-          grid-column: 3/4;
-          grid-row: 1/2;
-        }
-      }
+    }
   }
 }
+
+.chiled_2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column: 1/-1;
+  grid-row: 4/-1;
+
+  .title_header {
+    color: #4A4FF2;
+    font-family: $home-font-family;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: -0.42px;
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .h1 {
+    grid-column: 1/4;
+    grid-row: 2/-1;
+    font-family: $home-font-family;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px;
+    letter-spacing: 0px;
+    margin: 0px
+  }
+
+  .span1 {
+    color: #4A4FF2;
+  }
+}
+
+.quote_box {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column: 4/-1;
+  grid-row: 3/-1;
+
+  .quote_hr {
+    color: black;
+    margin: 0px;
+    grid-column: 5/6;
+    grid-row: 1/2;
+  }
+
+  .quote_text {
+    grid-column: 5/-1;
+    grid-row: 3/5;
+    color: aqua;
+  }
+}
+
+.a_top_projects,
+.a_top_contact {
+  font-family: $home-font-family;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -0.35px;
+  /*or -6.3% */
+  color: $home-text-color;
+  text-decoration: none;
+  @include shadow_transition;
+}
+
+/* the end of the header grid container which contains all the content in the header section.*/
+/* the start of the main grid container which contains all the content in the main section.*/
+.grid_contanier1_main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  width: 1110px;
+  height: 3195px;
+  margin: 0px auto;
+  gap: 20px;
+
+  .imges_div1 {
+    grid-column: 1/2;
+    grid-row: 1/10;
+    gap: 20px;
+  }
+
+  .imges_div2 {
+    grid-column: 2/3;
+    grid-row: 1/10;
+    gap: 20px;
+  }
+
+  .imges_div3 {
+    grid-column: 3/4;
+    grid-row: 1/10;
+    gap: 20px;
+  }
+
+  .grid_contanier2_main {
+    grid-column: 1/-1;
+    grid-row: 10/11;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    margin: 0px auto;
+
+    .info_box_main {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    .title_main {
+      font-family: $home-font-family;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 38px;
+      color: $home-text-color;
+      width: 635px;
+      height: 106px;
+      margin: 0px;
+    }
+
+    .ul_main_box {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      gap: 70px;
+      justify-self: end;
+
+      .ul_service1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        list-style: none;
+        margin: 0px;
+        font-family: $home-font-family;
+        font-size: 18px;
+        font-weight: 400;
+
+        .Multimedia_li {
+          width: 93px;
+          height: 23px;
+          margin-top: 10px;
+          box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.10);
+          transition: opacity 0.20s;
+          @include li_decration;
+        }
+
+        .Interactive_li {
+          margin-top: 10px;
+          width: 150px;
+          height: 23px;
+          box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.10);
+          transition: opacity 0.20s;
+          @include li_decration;
+        }
+
+        .Branding_li {
+          margin-top: 10px;
+          width: 77px;
+          height: 23px;
+          box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.10);
+          transition: opacity 0.20s;
+          @include li_decration;
+        }
+      }
+
+      .ul_service2 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        font-family: $home-font-family;
+        font-size: 18px;
+        font-weight: 400;
+
+        .creative_li {
+          width: 129.3px;
+          height: 23px;
+          margin-top: 10px;
+          box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.10);
+          transition: opacity 0.20s;
+          @include li_decration;
+        }
+
+        .Packaging_li {
+          width: 88px;
+          height: 28px;
+          margin-top: 10px;
+          box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.10);
+          transition: opacity 0.20s;
+          @include li_decration;
+        }
+
+        .Coding_li {
+          width: 59px;
+          height: 23px;
+          margin-top: 10px;
+          box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.10);
+          transition: opacity 0.20s;
+          @include li_decration;
+        }
+      }
+    }
+  }
+
+}
+
+.Multimedia_a,
+.interactive_a,
+.Branding_a,
+.creative_a,
+.packaging_a,
+.Coding_a {
+  text-decoration: none;
+  color: $home-text-color;
+}
+
+.grid_contanier3_awards {
+  grid-column: 1/-1;
+  grid-row: 11/-1;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  margin: auto;
+
+  .divider1 {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+
+    .hr_1_awards {
+      height: 2px;
+    }
+  }
+
+  .first_awards {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    color: $home-text-color;
+    font-family: $home-font-family;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .site_of_day {
+    grid-column: 7/9;
+    grid-row: 2/3;
+  }
+
+  .site_of_the_day_text {
+    color: $home-text-color;
+    font-family: $home-font-family;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nested_items4 {
+    grid-column: 11/13;
+    grid-row: 2/3;
+    display: grid;
+    width: 190px;
+    height: 110px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 32px 1fr;
+    font-family: $home-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    color: $home-text-color;
+
+    .nested_item1_4 {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+    }
+
+    .nested_item2_4 {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
+  }
+
+  .div_2018_1 {
+    grid-column: 15/16;
+    grid-row: 2/3;
+
+    .date_2018_1 {
+      font-family: $home-font-family;
+      font-size: 16px;
+      font-weight: 400;
+      color: $home-text-color;
+    }
+  }
+
+  .Best_navigation {
+    grid-column: 7/10;
+    grid-row: 4/5;
+    color: $home-text-color;
+    font-family: $home-font-family;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nested_items5 {
+    grid-column: 11/13;
+    grid-row: 4/5;
+    display: grid;
+    width: 190px;
+    height: 110px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 32px 1fr;
+    font-family: $home-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    color: $home-text-color;
+
+    .nested_item1_5 {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+    }
+
+    .nested_item2_5 {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
+  }
+
+  .div_2018_2 {
+    grid-column: 15/16;
+    grid-row: 4/5;
+
+    .text_2018_2 {
+      font-family: $home-font-family;
+      font-size: 16px;
+      font-weight: 400;
+      color: $home-text-color;
+    }
+  }
+
+  .divider2 {
+    grid-column: 1/-1;
+    grid-row: 6/7;
+
+    .hr_2_awards {
+      height: 2px;
+    }
+  }
+
+  .second_awards {
+    grid-column: 1/3;
+    grid-row: 7/8;
+    color: $home-text-color;
+    font-family: $home-font-family;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .site_of_day2 {
+    grid-column: 7/9;
+    grid-row: 7/8;
+
+    .site_of_day2_text {
+      color: $home-text-color;
+      font-family: $home-font-family;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .nested_items6 {
+    grid-column: 11/12;
+    grid-row: 7/18;
+    display: grid;
+    width: 190px;
+    height: 110px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 32px 1fr;
+    font-family: $home-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    color: $home-text-color;
+
+    .nested_item1_6 {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+    }
+
+    .nested_item2_6 {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
+  }
+
+  .div_2017_1 {
+    grid-column: 15/16;
+    grid-row: 7/18;
+
+    .text_2017 {
+      font-family: $home-font-family;
+      font-size: 16px;
+      font-weight: 400;
+      color: $home-text-color
+    }
+  }
+
+  .Best_navigation2 {
+    grid-column: 7/10;
+    grid-row: 9/10;
+    color: $home-text-color;
+    font-family: $home-font-family;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nested_items7 {
+    grid-column: 11/13;
+    grid-row: 9/10;
+    display: grid;
+    width: 190px;
+    height: 110px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 32px 1fr;
+    font-family: $home-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    color: $home-text-color;
+  }
+
+  .div_2016 {
+    grid-column: 15/16;
+    grid-row: 9/10;
+
+    .text_2016 {
+      font-family: $home-font-family;
+      font-size: 16px;
+      font-weight: 400;
+      color: $home-text-color
+    }
+  }
+
+  .divider3 {
+    grid-column: 1/-1;
+    grid-row: 10/11;
+
+    .hr_3_awards {
+      height: 2px;
+    }
+  }
+}
+
+/* the end of the main grid container which contains all the content in the main section.*/
+/* the start of the footer grid container which contains all the content in the footer section.*/
+.footer_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  width: 1110px;
+  height: 100px;
+  margin: 0px auto;
+
+  .footer_nav {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 6fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+
+    .footer_svg {
+      @extend %svg;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    .ul_footer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column: 3/4;
+      grid-row: 1/2;
+      padding: 0px;
+      margin: 0px;
+      list-style: none;
+
+      .li1_footer {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        @include li_decration;
+      }
+
+      .li2_footer {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        @include li_decration;
+      }
+    }
+
+    .icon_div {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column: 4/-1;
+      grid-row: 1/2;
+      gap: 15px;
+
+      .fa-dribbble {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        color: #000;
+        @include shadow_transition;
+        @include li_decration;
+      }
+
+      .fa-instagram {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        color: #000;
+        @include shadow_transition;
+        @include li_decration;
+      }
+
+      .fa-twitter {
+        grid-column: 4/5;
+        grid-row: 1/2;
+        color: #000;
+        @include shadow_transition;
+        @include li_decration;
+      }
+    }
+  }
+}
+
+.footer_projects_a,
+.footer_contact_a {
+  font-family: $home-font-family;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -0.35px;
+  /*or -6.3% */
+  color: $home-text-color;
+  text-decoration: none;
+  @include shadow_transition;
+}
+
+/* the end of the footer grid container which contains all the content in the footer section.*/
