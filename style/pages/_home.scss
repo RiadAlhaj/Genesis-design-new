@@ -145,7 +145,10 @@ $home-font-family: "Mulish", sans-serif;
   .quote_text {
     grid-column: 5/-1;
     grid-row: 3/5;
-    color: aqua;
+    font-family: $home-font-family;
+    font-style: italic;
+    font-size: 18px;
+    color: $home-text-color;
   }
 }
 
