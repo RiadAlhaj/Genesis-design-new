@@ -1,0 +1,199 @@
+body{
+  max-width:1360px;
+  width: 100%;
+  min-height:1375px;
+  height: 100vh;
+  margin:auto;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+}
+%svg {
+  width: 91px;
+  height: 23px;
+}
+$contact-text-color: #111111;
+$contact-font-family: "Mulish", sans-serif;
+
+@mixin a_decration_contact {
+  :hover {
+    opacity: 0.35;
+  }
+
+  :active {
+    opacity: 0.15;
+  }
+}
+
+@mixin shadow_transition {
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.20);
+  transition: opacity 0.20s;
+}
+
+.hedear_contact_page{
+  height: 506px;
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  grid-template-rows: repeat(50,1fr);
+  .top_nav_contact{
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: 1fr;
+    .top_logo_contact{
+      @extend%svg;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      }
+      .ul_top_contact{
+        list-style: none;
+        grid-column: 9/-1;
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: 1fr;
+        .home_li_contact_page{
+          grid-column: 3/4;
+          grid-row: 1/2;
+        }
+        .project_li_contact_page{
+          grid-column: 6/-1;
+          grid-row: 1/2;
+        }
+        .a_contact_top_nav_home , .a_contact_top_nav_project {
+          color: $contact-text-color;
+          font-family: $contact-font-family;
+          font-weight: bold;
+          text-decoration: none;
+          @include shadow_transition;
+          @include a_decration_contact;
+          }
+      }
+    }
+    .text_header_contact{
+      grid-column: 1/5;
+      grid-row: 12/25;
+      .h1_contact_page{
+        font-family: $contact-font-family;
+        color: $contact-text-color;
+        font-size:40px;
+        font-weight: bold;
+        line-height: 55px;
+        width: 465px;
+      }
+      .text_contact_page{
+        font-family: $contact-font-family;
+        color: $contact-text-color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+    .form{
+      height: 291px;
+      grid-column: 7/-1;
+      grid-row: 14/-1;
+      display: flex;
+      flex-direction: column;
+      .name_input{
+        height: 37px;
+        outline: none;
+      }
+      .email_input{
+        height: 50px;
+        margin-top: 46px;
+        outline: none;
+      }
+      #masseg{
+        margin-top: 42px;
+      }
+      .button_submit{
+        height: 50px;
+        width:125px;
+        margin-top: 25px;
+        background-color: #4A4FF2;
+        border: none;
+        color: #FFFFFF;
+      }
+    }
+    .button_submit{
+      @include shadow_transition;
+      @include a_decration_contact;
+      cursor: pointer;
+    }
+}
+
+.map_dev{
+  margin: auto;
+  min-height: 570px;
+  max-width: 1110px;
+}
+.contact_nav_footer{
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(3,1fr);
+  .footer_logo_contact{
+    @extend %svg;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    color: $home-text-color;
+  }
+  .footer_contact_ul{
+    grid-column: 4/5;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2,1fr);
+    list-style:none;
+    letter-spacing: -0.35p;
+    .li1_footer_contact_home{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    }
+    .li2_footer_contact_projact{
+      grid-column: 5/6;
+      grid-row: 1/2;
+    }
+  }
+  .icon_div_footer_contact{
+    grid-column: 5/-1;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr;
+    gap: 15px;
+    .dribbble_a_contact{
+      grid-column: 4/5;
+      grid-row: 1/2;
+      color: $home-text-color;
+      @include a_decration;
+    }
+    .instagram_a_contac{
+      grid-column: 5/6;
+      grid-row: 1/2;
+      color: $home-text-color;
+      @include a_decration;
+    }
+    .twitter_a_contact{
+      grid-column: 6/-1;
+      grid-row: 1/2;
+      color: $home-text-color;
+      @include a_decration;
+      
+    }
+  }
+}
+.a_footer_contact_projact , .a_footer_contact_home{
+font-family: $home-font-family;
+font-size: 18px;
+font-weight: bold;
+color: $home-text-color;
+text-decoration: none;
+letter-spacing: -0.35p;
+@include shadow_transition;
+@include a_decration;
+}
