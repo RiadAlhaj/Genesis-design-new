@@ -67,8 +67,6 @@ $contact-font-family: "Mulish", sans-serif;
           font-family: $contact-font-family;
           font-weight: bold;
           text-decoration: none;
-          @include shadow_transition;
-          @include a_decration_contact;
           }
       }
     }
@@ -194,6 +192,4 @@ font-weight: bold;
 color: $home-text-color;
 text-decoration: none;
 letter-spacing: -0.35p;
-@include shadow_transition;
-@include a_decration;
 }
