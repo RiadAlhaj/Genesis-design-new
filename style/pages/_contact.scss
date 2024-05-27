@@ -54,15 +54,15 @@ $contact-font-family: "Mulish", sans-serif;
         display: grid;
         grid-template-columns: repeat(7,1fr);
         grid-template-rows: 1fr;
-        .home_li_contact_page{
+        .projects_li_contact_page{
           grid-column: 3/4;
           grid-row: 1/2;
         }
-        .project_li_contact_page{
+        .contact_li_contact_page{
           grid-column: 6/-1;
           grid-row: 1/2;
         }
-        .a_contact_top_nav_home , .a_contact_top_nav_project {
+        .a_contact_top_nav_projects , .a_contact_top_nav_contact {
           color: $contact-text-color;
           font-family: $contact-font-family;
           font-weight: bold;
@@ -148,11 +148,11 @@ $contact-font-family: "Mulish", sans-serif;
     grid-template-rows: repeat(2,1fr);
     list-style:none;
     letter-spacing: -0.35p;
-    .li1_footer_contact_home{
+    .li1_footer_contact_projects{
     grid-column: 3/4;
     grid-row: 1/2;
     }
-    .li2_footer_contact_projact{
+    .li2_footer_contact_contact{
       grid-column: 5/6;
       grid-row: 1/2;
     }
@@ -181,11 +181,18 @@ $contact-font-family: "Mulish", sans-serif;
       grid-row: 1/2;
       color: $home-text-color;
       @include a_decration;
-      
     }
   }
 }
-.a_footer_contact_projact , .a_footer_contact_home{
+.a_footer_contact_projects{
+font-family: $home-font-family;
+font-size: 18px;
+font-weight: bold;
+color: $home-text-color;
+text-decoration: none;
+letter-spacing: -0.35p;
+}
+.a_footer_contact_contact{
 font-family: $home-font-family;
 font-size: 18px;
 font-weight: bold;
