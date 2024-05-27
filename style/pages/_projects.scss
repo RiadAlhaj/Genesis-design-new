@@ -62,8 +62,6 @@ $project-text-color:#111111;
         letter-spacing: -0.35px;
         color: $project-text-color;
         text-decoration: none;
-        @include shadow_transition;
-        @include a_decration;
         }
       }
       .contact_li{
@@ -77,8 +75,6 @@ $project-text-color:#111111;
         letter-spacing: -0.35px;
         color: $project-text-color;
         text-decoration: none;
-        @include shadow_transition;
-        @include a_decration;
       }
     }
   } 
@@ -313,8 +309,6 @@ $project-text-color:#111111;
   color: $project-text-color;
   text-decoration: none;
   letter-spacing: -0.35p;
-  @include shadow_transition;
-  @include a_decration;
 }
 
 
