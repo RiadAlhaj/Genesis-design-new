@@ -161,7 +161,6 @@ $home-font-family: "Mulish", sans-serif;
   /*or -6.3% */
   color: $home-text-color;
   text-decoration: none;
-  @include shadow_transition;
 }
 
 /* the end of the header grid container which contains all the content in the header section.*/
@@ -635,7 +634,6 @@ $home-font-family: "Mulish", sans-serif;
   /*or -6.3% */
   color: $home-text-color;
   text-decoration: none;
-  @include shadow_transition;
 }
 
 /* the end of the footer grid container which contains all the content in the footer section.*/
