@@ -51,11 +51,11 @@ $project-text-color:#111111;
       grid-column: 2/-1;
       grid-row: 2/3;
       list-style: none;
-      .home_li{
+      .projects_li{
         grid-column: 4/5;
         grid-row: 1/2;
         width: 20px;
-        .a_projects_top_nav_home{
+        .a_projects_top_nav_projects{
         font-family: $project-font-family;
         font-size: 18px;
         font-weight: bold;
@@ -264,7 +264,7 @@ $project-text-color:#111111;
       grid-template-rows: repeat(2,1fr);
       list-style:none;
       letter-spacing: -0.35p;
-      .li1_footer_project_home{
+      .li1_footer_project_projects{
       grid-column: 3/4;
       grid-row: 1/2;
       }
@@ -302,7 +302,7 @@ $project-text-color:#111111;
     }
   }
 }
-.a_footer_project_contact , .a_footer_project_home{
+.a_footer_project_contact , .a_footer_project_projects{
   font-family: $project-font-family;
   font-size: 18px;
   font-weight: bold;
