@@ -62,12 +62,23 @@ $contact-font-family: "Mulish", sans-serif;
           grid-column: 6/-1;
           grid-row: 1/2;
         }
-        .a_contact_top_nav_projects , .a_contact_top_nav_contact {
-          color: $contact-text-color;
-          font-family: $contact-font-family;
+        .a_contact_top_nav_projects  {
+          font-family: $home-font-family;
+          font-size: 18px;
           font-weight: bold;
+          color: $home-text-color;
           text-decoration: none;
+          letter-spacing: -0.35p;
           }
+          .a_contact_top_nav_contact {
+            font-family: $home-font-family;
+            font-size: 18px;
+            font-weight: bold;
+            color: $home-text-color;
+            text-decoration: none;
+            letter-spacing: -0.35p;
+          }
+
       }
     }
     .text_header_contact{
